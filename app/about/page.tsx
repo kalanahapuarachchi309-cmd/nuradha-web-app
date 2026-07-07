@@ -431,6 +431,12 @@ export default function AboutPage() {
           z-index: 5;
         }
 
+        .about-review-section {
+          background: #fff;
+          color: #1f241d;
+          padding: 0 0 6vh;
+        }
+
         .review-slider-all {
           margin-left: 11vw;
           width: 80%;
@@ -438,17 +444,42 @@ export default function AboutPage() {
           height: auto;
         }
 
+        .review-content h5 {
+          color: #8a827d;
+          font-size: 1.15rem;
+          font-weight: 400;
+        }
+
+        .review-content p {
+          color: #7c766f;
+          line-height: 1.6;
+        }
+
         .about-vision-section {
-          background: #050505;
+          background: linear-gradient(180deg, #365923 0%, #264217 100%);
           color: #fff;
-          padding: 6vh 0 4vh;
+          padding: 12vh 0 14vh;
+          overflow: hidden;
         }
 
         .about-vision-section .vision-text {
+          max-width: 1500px;
+          margin: 0 auto;
           padding: 0 5vw;
           color: #f6f6f6;
           line-height: 1.9;
-          font-size: 1.05rem;
+          font-size: 1.08rem;
+        }
+
+        .about-vision-section h2 {
+          margin: 0;
+          font-family: Georgia, "Times New Roman", serif;
+          font-size: clamp(1.5rem, 2.4vw, 2.15rem);
+          letter-spacing: 0.02em;
+        }
+
+        .about-vision-section .vision-block + .vision-block {
+          margin-top: 6vh;
         }
 
         @keyframes aboutSlideMove {
@@ -788,8 +819,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div id="carouselExampleControls" className="carousel slide review-slide-main mb-5" data-ride="carousel">
-        <div className="carousel-inner review-slider-all">
+      <section className="about-review-section">
+        <div id="carouselExampleControls" className="carousel slide review-slide-main mb-5" data-ride="carousel">
+        <div className="carousel-inner review-slider-all" style={{ marginLeft: "11vw", width: "80%", height: "60vh" }}>
           <section className="mb-3" style={{ backgroundColor: "#1b251b", padding: "4vh", margin: 0 }}>
             <div className="auto-container sub-prod-head-1">
               <div className="wrapper-box light-header" style={{ textAlign: "center" }}>
@@ -835,20 +867,21 @@ export default function AboutPage() {
         </div>
 
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true" style={{ backgroundColor: "black" }} />
+          <span className="carousel-control-prev-icon" aria-hidden="true" style={{ backgroundColor: "#8a8a8a" }} />
           <span className="sr-only">Previous</span>
         </a>
 
         <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true" style={{ backgroundColor: "black" }} />
+          <span className="carousel-control-next-icon" aria-hidden="true" style={{ backgroundColor: "#8a8a8a" }} />
           <span className="sr-only">Next</span>
         </a>
-      </div>
+        </div>
+      </section>
 
       <section className="about-vision-section">
         <div className="auto-container">
           <div className="col-lg-10" style={{ minWidth: "98vw" }}>
-            <div className="col-lg-12" style={{ textAlign: "center" }}>
+            <div className="col-lg-12 vision-block" style={{ textAlign: "center" }}>
               <h2 className="font-weight-bold" style={{ color: "white", padding: "3vh 0 4vh 0" }}>
                 OUR VISION
               </h2>
@@ -856,7 +889,7 @@ export default function AboutPage() {
                 "To be the benchmark in the commercial fishing industry renowned for exceptional service. To be recognized for our contributions to client companies, the professionalism maintained, and our human qualities."
               </div>
             </div>
-            <div className="col-lg-12" style={{ textAlign: "center" }}>
+            <div className="col-lg-12 vision-block" style={{ textAlign: "center" }}>
               <h2 className="font-weight-bold" style={{ color: "white", padding: "6vh 0 3vh 0" }}>
                 OUR MISSION
               </h2>
