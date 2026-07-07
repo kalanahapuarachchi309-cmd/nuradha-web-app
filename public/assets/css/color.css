@@ -1,0 +1,371 @@
+/* Default Color File  */
+
+
+
+
+/* Color */
+a:hover,
+a {
+    color:  #66a21c;
+}
+
+.scroll-to-top:hover,
+.preloader-close,
+.search-popup .search-form fieldset input[type="submit"] {
+    background-color:  #66a21c;
+}
+
+.scroll-to-top {
+    color: #66a21c;
+    border: 2px dashed #406019;
+}
+
+
+.btn-style-one.style-two i {
+    color:  #66a21c;
+}
+
+.btn-style-one.style-two:before {
+    background:  #66a21c;
+}
+
+.btn-style-one.style-two:hover {
+    border-color:  #66a21c;
+}
+
+.btn-style-one {
+    background-color: transparent;
+}
+
+.header-top .social-icon li a:hover {
+    color:  #66a21c;
+}
+
+.main-menu .navigation>li>a:before {
+    border: 3px solid  #66a21c;
+}
+
+.main-menu .navigation>li>ul>li>a:hover {
+    color:  #66a21c;
+}
+
+.main-menu .navigation>li>ul>li>ul>li>a:hover {
+    color:  #66a21c;
+}
+
+.banner-section .banner-slider-button-next:hover {
+    background-color: #66a21c;
+}
+
+.banner-section .banner-slider-button-prev:hover {
+    background-color:  #66a21c;
+}
+
+.sec-title .sub-title {
+    color: #2bc52e;
+    border: 3px solid #154f02;
+}
+
+.links-widget .list li a:hover {
+    color:  #66a21c;
+}
+
+.news-widget .date {
+    color:  #66a21c;
+}
+
+.contact-widget .icon {
+    color:  #66a21c;
+}
+
+.footer-bottom .social-icon li a:hover {
+    background:  #66a21c;
+}
+
+.welcome-section .image-one:before {
+    background-color:  #66a21c;
+}
+
+.welcome-section .list li:before {
+    color:  #66a21c;
+}
+
+.welcome-section .icon-box .icon {
+    color: #66a21c;
+}
+.welcome-section .note {
+    border: 10px solid #1e58bd;
+}
+
+/* CTA section */
+
+.cta-section {
+    background-image: linear-gradient(rgba(30, 91, 7, 0.84), #0b170c);
+}
+
+.cta-section .link .theme-btn:hover {
+    color: #66a21c;
+}
+
+.service-block .content h3 a:hover {
+    color: #66a21c;
+}
+
+.service-block .content .btn-style-one:before {
+    background-color:  #66a21c;
+}
+
+.testimonials-section .swiper-slide-thumb-active .author-thumb:before {
+	border-color: #1e58bd;
+}
+
+.testimonial-block .author-title span {
+    color: #1e58bd;
+}
+
+.testimonials-section .icon-box .icon {
+    background-color: #1e58bd;
+}
+
+.team-block .content:before {
+    background-color: #00173d;
+}
+
+.team-block .social-icon li a:hover {
+    color: #1e58bd;
+    background: #fff;
+}
+.facts-section .content {
+    border: 4px solid #1e58bd;
+}
+
+.facts-section .content:before {
+    background-color: #1e58bd;
+}
+
+.news-block h4 a:hover {
+    color: #1e58bd;
+}
+
+.newsletter-section .icon {
+    color: #1e58bd;
+}
+
+.banner-section.style-two .content-box .inner:before {
+    background: #1e58bd;
+}
+
+.welcome-section-two .experience-years .icon {
+    color: #1e58bd;
+}
+
+.progress-levels .progress-box .bar .bar-fill {
+    background: #1e58bd;
+}
+
+.welcome-section-two .list li:before {
+    color: #1e58bd;
+}
+
+.services-section .service-block .image .border-shape:after {
+    background: #1e58bd;
+}
+
+.video-section .video-btn span {
+    background-color: #1e58bd;
+}
+
+.video-section .video-btn a {
+	background-color: #1e58bd;
+}
+
+.projects-section:before {
+    background-color: #1e58bd;
+}
+
+.project-block .inner-box:hover h4 a:hover {
+    color: #a8c3e8;
+}
+
+.accordion-box .block .icon-outer {
+    color: #1e58bd;
+}
+
+.news-block-two .date {
+    background-color: #1e58bd;
+}
+
+.news-block-two .post-meta a i {
+    color: #1e58bd;
+}
+
+.news-block-two h4 a:hover {
+    color: #1e58bd;
+}
+
+.page-title .bread-crumb {
+    border: 3px solid #1e58bd;
+}
+
+.welcome-section-three .experience-years {
+    background-color: #1e58bd;
+}
+
+.welcome-section-three .list li:before {
+    color: #1e58bd;
+}
+
+.contact-info .icon {
+    background: #158116;
+}
+
+.news-block-three .date {
+    background-color: #1e58bd;
+}
+
+.news-block-three .post-meta a i {
+    color: #1e58bd;
+}
+
+.news-block-three h4 a:hover {
+    color: #1e58bd;
+}
+
+.styled-pagination li a:hover,
+.styled-pagination li a.active{
+    background-color: #1e58bd;
+}
+
+.news-widget .post:hover .image:before {
+    border-color: #1e58bd;
+}
+
+.header-top ul.contact-info li i {
+    color: #1e58bd;
+}
+
+.blog-sidebar .widget.search-box {
+    background: #1e58bd;
+}
+
+.sidebar .search-box .form-group button{
+    color: #1e58bd;
+}
+
+.category-widget .cat-list li a:hover {
+    color: #1e58bd;
+}
+
+.news-widget-two .post a:hover{
+    color: #1e58bd;
+}
+
+.news-widget-two .comment{
+    color: #1e58bd;
+}
+.tag-widget a:hover{
+    background-color: #1e58bd;
+}
+
+.blog-sidebar .widget .widget_title {
+    color: #1e58bd;
+    border: 3px solid #1e58bd;
+}
+
+.comments-area .comment-box:hover {
+    border-color: #1e58bd;
+}
+
+.comments-area .date {
+    color: #1e58bd;
+}
+
+.comments-area .comment-box .reply-comment-btn {
+    background: #1e58bd;
+}
+
+.comment-form .form-group input[type="text"]:focus,
+.comment-form .form-group input[type="password"]:focus,
+.comment-form .form-group input[type="tel"]:focus,
+.comment-form .form-group input[type="email"]:focus,
+.comment-form .form-group select:focus,
+.comment-form .form-group textarea:focus {
+    border-color: #1e58bd;
+}
+
+.post-tag ul.tag li a:hover {
+    color: #1e58bd;
+}
+
+.post-tag .social-icon li a:hover {
+    background: #1e58bd;
+}
+
+.project-details .list li:before {
+    color: #1e58bd;
+}
+
+.service-details .service-benifit .icon-box .icon {
+    color: #1e58bd;
+}
+
+.category-widget-two li a:hover,
+.category-widget-two li.active a {
+    background: #1e58bd;
+}
+
+.consult-widget {
+    background: #1e58bd;
+}
+
+.consult-widget .icon {
+    color: #1e58bd;
+}
+
+.consult-widget .phone a:hover {
+    color: #1e58bd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

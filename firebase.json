@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "codex.md",
+      "README.md",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
