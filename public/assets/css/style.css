@@ -2363,16 +2363,44 @@ img {
 .cta-section#desc-img {
     background: #ffffff !important;
     background-image: none !important;
+    min-height: 220px;
+    padding: 45px 0;
+    display: flex;
+    align-items: center;
 }
 
 .cta-section#desc-img::before {
     content: none !important;
 }
 
+.cta-section#desc-img .auto-container {
+    width: 100%;
+}
+
+.cta-section#desc-img .wrapper-box.hidden {
+    filter: none;
+    opacity: 1;
+    transform: none;
+    animation: descTextFadeUp .9s ease both;
+}
+
 .cta-section#desc-img .fade-text,
 .cta-section#desc-img h4 {
     color: #000000 !important;
     text-shadow: none !important;
+    line-height: 1.35;
+    margin: 0;
+}
+
+@keyframes descTextFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .cta-section::before {
@@ -2425,6 +2453,19 @@ img {
     position: relative;
     padding: 120px 0 100px;
     z-index: 1;
+}
+
+.services-section.pb-0 {
+    padding: 80px 20px !important;
+}
+
+.services-section.pb-0 .row {
+    justify-content: center;
+    align-items: stretch;
+}
+
+.services-section.pb-0 .service-block .inner-box {
+    margin-bottom: 0;
 }
 
 .services-section .sec-bg {
