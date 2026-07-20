@@ -2423,7 +2423,7 @@ img {
 
 .services-section {
     position: relative;
-    padding: 120px 0 140px;
+    padding: 120px 0 100px;
     z-index: 1;
 }
 
@@ -2433,7 +2433,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 860px;
+    height: 100%;
     background-size: cover;
 }
 
@@ -2595,14 +2595,39 @@ img {
 }
 
 .testimonials-section.second-hd {
-    margin-top: -220px;
-    padding: 320px 0 110px;
+    margin-top: 0;
+    padding: 75px 0 75px;
+    background-color: #fff;
     background-position: center top;
     background-size: cover;
 }
 
 .testimonials-section.second-hd .main-desc-2 {
-    padding-top: 72px;
+    padding-top: 0;
+}
+
+.testimonials-section.second-hd .sec-title.hidden {
+    filter: none;
+    opacity: 1;
+    transform: none;
+    animation: quoteFadeUp .9s ease both;
+}
+
+.testimonials-section.second-hd .sec-title h3 {
+    color: #111;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@keyframes quoteFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .testimonials-section .author-thumb{
