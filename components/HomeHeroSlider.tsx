@@ -6,27 +6,32 @@ const slides = [
   {
     localImage: "/assets/posters/Leading%20fishing%20winch%20manufacture.png",
     cdnImage: "https://cdn.livestreaminfo.com/assets/posters/1787221277712-Leading_fishing_winch_manufacture.png",
-    title: "Sri Lanka’s Leading Manufacturer of Marine Winches, Haulers & Fishing Equipment",
+    titleWhite: "SRI LANKA’S LEADING MANUFACTURER OF",
+    titleYellow: "MARINE WINCHES, HAULERS & FISHING EQUIPMENT",
   },
   {
     localImage: "/assets/posters/Trusted%20Hydraulic%20Partner.png",
     cdnImage: "https://cdn.livestreaminfo.com/assets/posters/1787221256460-Trusted_Hydraulic_Partner.png",
-    title: "Your Trusted Partner in Hydraulic Solutions",
+    titleWhite: "YOUR TRUSTED PARTNER IN",
+    titleYellow: "HYDRAULIC SOLUTIONS",
   },
   {
     localImage: "/assets/posters/Custom%20Sealing%20Solutions.png",
     cdnImage: "https://cdn.livestreaminfo.com/assets/posters/1787220089721-Custom_Sealing_Solutions__2_.png",
-    title: "Custom Sealing Solutions for Every Application",
+    titleWhite: "CUSTOM SEALING SOLUTIONS",
+    titleYellow: "FOR EVERY APPLICATION",
   },
   {
     localImage: "/assets/posters/engineering-fabrication-hero-.png",
     cdnImage: "https://cdn.livestreaminfo.com/assets/posters/1787221405508-engineering-fabrication-hero-.png",
-    title: "Precision Turning, Milling, Welding & Fabrication—All Under One Roof",
+    titleWhite: "PRECISION TURNING, MILLING, WELDING & FABRICATION—",
+    titleYellow: "ALL UNDER ONE ROOF",
   },
   {
     localImage: "/assets/posters/Skilled%20Proffesional.png",
     cdnImage: "https://cdn.livestreaminfo.com/assets/posters/1787221332700-Skilled_Proffesional.png",
-    title: "Skilled Professionals. Proven Experience. Ready to Support You.",
+    titleWhite: "SKILLED PROFESSIONALS. PROVEN EXPERIENCE.",
+    titleYellow: "READY TO SUPPORT YOU.",
   },
 ];
 
@@ -97,11 +102,16 @@ export default function HomeHeroSlider() {
               <div className="hero-slide-overlay" />
               <div className="content-outer">
                 <div className="content-box">
-                  <div className="inner text-center slider-text">
+                  <div className="inner text-left slider-text">
                     {isActive && (
-                      <h1 key={activeIndex} className="animate-word-entrance">
-                        {slide.title}
-                      </h1>
+                      <div key={activeIndex} className="animate-word-entrance hero-title-block">
+                        <div className="title-yellow-bar" />
+                        <h1 className="hero-title-text">
+                          <span className="text-white-part">{slide.titleWhite}</span>
+                          {" "}
+                          <span className="text-yellow-part">{slide.titleYellow}</span>
+                        </h1>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -128,5 +138,6 @@ export default function HomeHeroSlider() {
     </section>
   );
 }
+
 
 
