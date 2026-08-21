@@ -5525,6 +5525,25 @@ img {
     transition: all 0.25s ease !important;
     border: 1.5px solid transparent !important;
     border-radius: 2px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove all legacy green borders, outlines, pseudo-elements */
+.main-menu .navigation > li > a:before,
+.main-menu .navigation > li > a:after,
+.main-menu .navigation > li:before,
+.main-menu .navigation > li:after,
+.main-menu .navigation > li.current:before,
+.main-menu .navigation > li.current:after,
+.main-menu .navigation > li.current > a:before,
+.main-menu .navigation > li.current > a:after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Active Nav Item - Yellow Box Outline */
@@ -5532,6 +5551,8 @@ img {
     border: 1.5px solid #eab308 !important;
     color: #eab308 !important;
     background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .main-menu .navigation > li:hover > a {

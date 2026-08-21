@@ -24,7 +24,7 @@ const slides = [
   {
     localImage: "/assets/posters/engineering-fabrication-hero-.png",
     cdnImage: "https://cdn.livestreaminfo.com/assets/posters/1787221405508-engineering-fabrication-hero-.png",
-    titleWhite: "PRECISION TURNING, MILLING, WELDING & FABRICATION—",
+    titleWhite: "PRECISION TURNING, MILLING, WELDING & FABRICATION",
     titleYellow: "ALL UNDER ONE ROOF",
   },
   {
