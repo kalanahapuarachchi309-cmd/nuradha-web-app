@@ -52,10 +52,18 @@ export default function HomeHeroSlider() {
               aria-hidden={!isActive}
               key={slide.image}
             >
-              <div
-                className="slide-bg-img"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              />
+              {isActive ? (
+                <div
+                  key={`${slide.image}-${activeIndex}`}
+                  className="slide-bg-img active-zoom-out"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                />
+              ) : (
+                <div
+                  className="slide-bg-img"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                />
+              )}
               <div className="hero-slide-overlay" />
               <div className="content-outer">
                 <div className="content-box">
