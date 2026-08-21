@@ -4,28 +4,24 @@ import { useCallback, useEffect, useState } from "react";
 
 const slides = [
   {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/Home_Page_slide_image/slide_Image_01.webp",
-    title: "The choice of Professional fisherman",
+    image: "https://cdn.livestreaminfo.com/assets/posters/1787221277712-Leading_fishing_winch_manufacture.png",
+    title: "Sri Lanka’s Leading Manufacturer of Marine Winches, Haulers & Fishing Equipment",
   },
   {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/Home_Page_slide_image/slide_Image_02.webp",
-    title: "Super Fine Ultimate Quality Product",
+    image: "https://cdn.livestreaminfo.com/assets/posters/1787221256460-Trusted_Hydraulic_Partner.png",
+    title: "Your Trusted Partner in Hydraulic Solutions",
   },
   {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/Home_Page_slide_image/slide_Image_03.webp",
-    title: "High performance End Result Guaranteed",
+    image: "https://cdn.livestreaminfo.com/assets/posters/1787220089721-Custom_Sealing_Solutions__2_.png",
+    title: "Custom Sealing Solutions for Every Application",
   },
   {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/Home_Page_slide_image/slide_Image_04.webp",
-    title: "Skillful expert team work",
+    image: "https://cdn.livestreaminfo.com/assets/posters/1787221405508-engineering-fabrication-hero-.png",
+    title: "Precision Turning, Milling, Welding & Fabrication—All Under One Roof",
   },
   {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/Home_Page_slide_image/slide_Image_05.webp",
-    title: "State-Of-The-Art Production Facilities",
-  },
-  {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/Home_Page_slide_image/slide_Image_06.webp",
-    title: "Exclusive Engineering Solutions",
+    image: "https://cdn.livestreaminfo.com/assets/posters/1787221332700-Skilled_Proffesional.png",
+    title: "Skilled Professionals. Proven Experience. Ready to Support You.",
   },
 ];
 
@@ -48,22 +44,33 @@ export default function HomeHeroSlider() {
   return (
     <section className="banner-section native-home-hero" aria-label="Nuradha highlights">
       <div className="native-home-slider">
-        {slides.map((slide, index) => (
-          <div
-            className={`swiper-slide native-home-slide${index === activeIndex ? " swiper-slide-active" : ""}`}
-            style={{ backgroundImage: `url(${slide.image})` }}
-            aria-hidden={index !== activeIndex}
-            key={slide.image}
-          >
-            <div className="content-outer">
-              <div className="content-box">
-                <div className="inner text-center slider-text">
-                  <h1>{slide.title}</h1>
+        {slides.map((slide, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              className={`swiper-slide native-home-slide${isActive ? " swiper-slide-active" : ""}`}
+              aria-hidden={!isActive}
+              key={slide.image}
+            >
+              <div
+                className="slide-bg-img"
+                style={{ backgroundImage: `url(${slide.image})` }}
+              />
+              <div className="hero-slide-overlay" />
+              <div className="content-outer">
+                <div className="content-box">
+                  <div className="inner text-center slider-text">
+                    {isActive && (
+                      <h1 key={activeIndex} className="animate-word-entrance">
+                        {slide.title}
+                      </h1>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="banner-slider-nav">
@@ -83,3 +90,4 @@ export default function HomeHeroSlider() {
     </section>
   );
 }
+

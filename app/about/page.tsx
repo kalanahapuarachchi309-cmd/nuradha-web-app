@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteHeader from "../../components/SiteHeader";
 import SiteFooter from "../../components/SiteFooter";
 
 const heroImage = "/assets/images/about_Main_page_slide/Main_slide_05.avif";
@@ -622,22 +623,7 @@ export default function AboutPage() {
         }
       `}</style>
 
-      <header className="about-hero-header">
-        <div className="inner">
-          <a className="about-hero-logo" href="/" aria-label="Nuradha home">
-            <img src="/assets/images/logo.png" alt="Nuradha Engineering" />
-          </a>
-
-          <nav className="about-hero-nav" aria-label="Primary">
-            <a href="/">Home</a>
-            <a className="active" href="/about" aria-current="page">
-              About Us
-            </a>
-            <a href="/projects">Products</a>
-            <a href="/contact">Contact Us</a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="about-hero-stage" aria-label="About hero">
         <div className="about-hero-slide">

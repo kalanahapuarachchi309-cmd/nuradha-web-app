@@ -20,7 +20,7 @@ const productLinks = [
 export default function SiteHeader() {
   return (
     <header className="main-header header-style-one">
-      <div className="header-upper" style={{ position: "fixed" }}>
+      <div className="header-upper">
         <div className="auto-container">
           <div className="inner-container">
             <div className="logo-box">
@@ -37,14 +37,14 @@ export default function SiteHeader() {
                   <img src="/assets/images/icons/icon-bar-2.png" alt="Open navigation" />
                 </div>
 
-                <nav className="main-menu navbar-expand-md navbar-light" style={{ marginRight: "4vw" }} aria-label="Primary">
+                <nav className="main-menu navbar-expand-md navbar-light" aria-label="Primary">
                   <div className="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                     <ul className="navigation">
                       <li><a href="/">Home</a></li>
                       <li><a href="/about">About Us</a></li>
                       <li className="nav-item dropdown" id="product-dropdown">
                         <a className="nav-link dropdown-toggle" href="/projects">Products</a>
-                        <ul className="dropdown-menu" style={{ marginLeft: "-12vw" }}>
+                        <ul className="dropdown-menu">
                           <li className="nav-item dropdown prod-dropdown">
                             <a className="nav-link dropdown-toggle">Haulers &amp; Winches</a>
                             <ul className="dropdown-menu">
@@ -67,7 +67,7 @@ export default function SiteHeader() {
                           ))}
                         </ul>
                       </li>
-                      <li><a style={{ marginLeft: "-1vw" }} href="/contact">Contact Us</a></li>
+                      <li><a href="/contact">Contact Us</a></li>
                     </ul>
                   </div>
                 </nav>
