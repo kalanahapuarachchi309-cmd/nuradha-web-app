@@ -1,3 +1,4 @@
+import EquipmentSpectrumBanner from "../components/EquipmentSpectrumBanner";
 import HomeHeroSlider from "../components/HomeHeroSlider";
 import HydraulicSolutionsSection from "../components/HydraulicSolutionsSection";
 import ServicesSolutionsSection from "../components/ServicesSolutionsSection";
@@ -53,19 +54,7 @@ export default function HomePage() {
 
       <ServicesSolutionsSection />
 
-      <section className="testimonials-section second-hd">
-        <div className="auto-container">
-          <div className="row">
-            <div className="col-lg-12 main-desc-2">
-              <div className="sec-title hidden">
-                <h3 className="fade-text" style={{ textAlign: "center", fontWeight: "bold" }}>
-                  “ We provide the entire spectrum of equipment solutions for your hydraulic requirements ”
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EquipmentSpectrumBanner />
 
       <section className="mb-3" style={{ backgroundColor: "black", padding: "5vh" }}>
         <div className="auto-container">

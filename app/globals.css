@@ -1093,6 +1093,121 @@ img {
   }
 }
 
+/* =========================================================
+   Equipment Spectrum Banner Styling & Animations
+   ========================================================= */
+
+.equipment-spectrum-banner {
+  position: relative;
+  background: linear-gradient(180deg, #050a10 0%, #0a1828 50%, #050a10 100%);
+  padding: 75px 20px;
+  overflow: hidden;
+  border-top: 1px solid rgba(234, 179, 8, 0.2);
+  border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.equipment-spectrum-banner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+.spectrum-quote-box {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.spectrum-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  color: #eab308;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 6px 18px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.spectrum-badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #eab308;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #eab308;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+.quote-mark-icon {
+  font-size: 64px;
+  line-height: 1;
+  font-family: Georgia, serif;
+  color: rgba(234, 179, 8, 0.35);
+  margin-bottom: -15px;
+  user-select: none;
+}
+
+.spectrum-quote-text {
+  color: #ffffff;
+  font-size: clamp(1.4rem, 3.2vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  margin: 0 0 25px 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.spectrum-quote-text .gold-highlight {
+  color: #eab308;
+  background: linear-gradient(135deg, #fef08a 0%, #eab308 60%, #ca8a04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.spectrum-divider {
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #eab308, transparent);
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spectrum-divider.expanded {
+  width: 140px;
+}
+
+@media (max-width: 768px) {
+  .equipment-spectrum-banner {
+    padding: 50px 16px;
+  }
+
+  .spectrum-quote-text {
+    font-size: clamp(1.15rem, 4.8vw, 1.6rem);
+    line-height: 1.5;
+  }
+
+  .quote-mark-icon {
+    font-size: 48px;
+    margin-bottom: -10px;
+  }
+}
+
+
 
 
 
