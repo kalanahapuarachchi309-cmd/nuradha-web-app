@@ -387,6 +387,715 @@ body {
   }
 }
 
+/* =========================================================
+   Complete Hydraulic Solutions Section Styling & Animation
+   ========================================================= */
+
+.hydraulic-solutions-section {
+  position: relative;
+  background: linear-gradient(180deg, #050a10 0%, #0a1726 50%, #050a10 100%);
+  padding: 80px 20px;
+  overflow: hidden;
+  border-top: 1px solid rgba(234, 179, 8, 0.2);
+  border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.hydraulic-solutions-section::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+.hydraulic-badge-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hydraulic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  color: #eab308;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hydraulic-badge:hover {
+  background: rgba(234, 179, 8, 0.18);
+  border-color: #eab308;
+  box-shadow: 0 0 25px rgba(234, 179, 8, 0.3);
+  transform: translateY(-2px);
+}
+
+.hydraulic-badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #eab308;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #eab308;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+.hydraulic-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 45px 0;
+  line-height: 1.2;
+}
+
+.hydraulic-title .gold-accent {
+  color: #eab308;
+  background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hydraulic-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hydraulic-card {
+  position: relative;
+  background: rgba(10, 25, 38, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.hydraulic-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #eab308, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hydraulic-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(234, 179, 8, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(234, 179, 8, 0.12);
+  background: rgba(13, 30, 46, 0.85);
+}
+
+.hydraulic-card:hover::before {
+  opacity: 1;
+}
+
+.card-header-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eab308;
+  font-size: 24px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hydraulic-card:hover .card-header-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(234, 179, 8, 0.2);
+}
+
+.hydraulic-card-subtitle {
+  color: #eab308;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.hydraulic-card-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.hydraulic-card-desc {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.hydraulic-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.hydraulic-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.hydraulic-card:hover .hydraulic-tag {
+  background: rgba(234, 179, 8, 0.1);
+  border-color: rgba(234, 179, 8, 0.25);
+  color: #fef08a;
+}
+
+/* Animations on Scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.15s;
+}
+
+.delay-2 {
+  transition-delay: 0.3s;
+}
+
+.hydraulic-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.btn-hydraulic-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #eab308;
+  color: #050a10;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
+}
+
+.btn-hydraulic-primary:hover {
+  background: #facc15;
+  color: #050a10;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(234, 179, 8, 0.45);
+}
+
+.btn-hydraulic-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-hydraulic-outline:hover {
+  border-color: #eab308;
+  color: #eab308;
+  background: rgba(234, 179, 8, 0.08);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Services Solutions (Marine, Hydraulic, Sealing) Section Styling
+   ========================================================= */
+
+.services-solutions-section {
+  position: relative;
+  background: #07101a;
+  padding: 90px 20px;
+  overflow: hidden;
+}
+
+.solutions-section-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.solutions-header-pill {
+  display: inline-block;
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  color: #eab308;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 6px 18px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.solutions-section-title {
+  color: #ffffff;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 14px 0;
+}
+
+.solutions-section-title .gold-text {
+  color: #eab308;
+}
+
+.solutions-section-subtitle {
+  color: #94a3b8;
+  font-size: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.solutions-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.solution-feature-card {
+  background: rgba(13, 26, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.solution-feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(234, 179, 8, 0.45);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(234, 179, 8, 0.15);
+}
+
+.solution-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.solution-card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.solution-feature-card:hover .solution-card-image-wrapper img {
+  transform: scale(1.08);
+}
+
+.solution-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 10, 16, 0.1) 0%, rgba(13, 26, 39, 0.95) 100%);
+}
+
+.solution-card-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  right: 16px;
+  background: rgba(5, 12, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #fef08a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.solution-card-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.solution-card-title {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.solution-card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #eab308;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.solution-feature-card:hover .solution-card-title::after {
+  width: 70px;
+}
+
+.solution-card-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.solution-card-text {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.solution-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.solution-card-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.solution-feature-card:hover .solution-card-tag {
+  border-color: rgba(234, 179, 8, 0.3);
+  color: #eab308;
+  background: rgba(234, 179, 8, 0.08);
+}
+
+.solution-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.solution-read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #eab308;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.solution-read-more-btn:hover {
+  color: #fef08a;
+  transform: translateX(4px);
+}
+
+.delay-3 {
+  transition-delay: 0.45s;
+}
+
+/* =========================================================
+   Comprehensive Mobile & Tablet Responsiveness Rules
+   ========================================================= */
+
+/* Ensure all images scale fluidly without overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablet & Mobile Screens (<= 991px) */
+@media (max-width: 991px) {
+  .auto-container {
+    padding: 0 20px !important;
+  }
+
+  .hydraulic-solutions-section {
+    padding: 60px 16px;
+  }
+
+  .hydraulic-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.5rem);
+    margin-bottom: 35px;
+  }
+
+  .hydraulic-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .services-solutions-section {
+    padding: 60px 16px;
+  }
+
+  .solutions-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .solutions-section-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.5rem);
+  }
+}
+
+/* Smartphone Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  /* Hero Slider Mobile Adjustments */
+  .native-home-slider {
+    height: 100dvh !important;
+    min-height: 520px !important;
+  }
+
+  .banner-section .content-box {
+    padding: 0 16px 70px 16px !important;
+    text-align: center !important;
+  }
+
+  .hero-title-text {
+    font-size: clamp(1.2rem, 5.2vw, 1.7rem) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+
+  .title-yellow-bar {
+    margin: 0 auto 12px auto !important;
+  }
+
+  .banner-slider-nav {
+    bottom: 20px !important;
+    right: 50% !important;
+    transform: translateX(50%) !important;
+    display: flex !important;
+    gap: 12px !important;
+  }
+
+  .banner-slider-control {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Hydraulic Section Mobile */
+  .hydraulic-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .hydraulic-card {
+    padding: 24px 18px;
+  }
+
+  .hydraulic-card-title {
+    font-size: 18px;
+  }
+
+  .hydraulic-card-desc {
+    font-size: 14px;
+  }
+
+  .hydraulic-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .btn-hydraulic-primary,
+  .btn-hydraulic-outline {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 20px;
+  }
+
+  /* Services Solutions Mobile */
+  .solutions-section-header {
+    margin-bottom: 35px;
+  }
+
+  .solution-card-image-wrapper {
+    height: clamp(170px, 48vw, 220px);
+  }
+
+  .solution-card-body {
+    padding: 20px 16px;
+  }
+
+  .solution-card-title {
+    font-size: 19px;
+  }
+
+  .solution-card-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .solution-card-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Marine Products Grid Mobile */
+  .projects-section .row {
+    padding: 10px 0 !important;
+  }
+
+  .project-block {
+    margin-bottom: 24px;
+  }
+
+  .project-block .image {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .project-block .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* WhatsApp & Scroll Floating Elements Mobile Position */
+  .whatsapp-float {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+    z-index: 99999 !important;
+  }
+
+  .scroll-to-top {
+    bottom: 16px !important;
+    right: 74px !important;
+    width: 42px !important;
+    height: 42px !important;
+    line-height: 42px !important;
+    z-index: 99998 !important;
+  }
+}
+
+/* Extra Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .hydraulic-solutions-section,
+  .services-solutions-section {
+    padding: 45px 12px;
+  }
+
+  .hydraulic-card,
+  .solution-card-body {
+    padding: 18px 14px;
+  }
+
+  .hydraulic-tag,
+  .solution-card-tag {
+    font-size: 10.5px;
+    padding: 4px 8px;
+  }
+}
+
+
+
+
 
 
 

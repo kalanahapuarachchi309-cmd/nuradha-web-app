@@ -1,33 +1,8 @@
 import HomeHeroSlider from "../components/HomeHeroSlider";
+import HydraulicSolutionsSection from "../components/HydraulicSolutionsSection";
+import ServicesSolutionsSection from "../components/ServicesSolutionsSection";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
-
-const solutions = [
-  {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/solution-sction/Marine_Solution.jpeg",
-    alt: "Marine solution",
-    title: "Marine Solution",
-    description:
-      "Nuradha Engineering is a specialized manufacturer and a leading exporter of high-quality marine winches such as long line hauler, net hauler, purse seine winch, combined net and rope hauler, and manual line hauler.",
-    animation: "fadeInUp",
-  },
-  {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/solution-sction/Hydraulic+Solution.jpeg",
-    alt: "Hydraulic solution",
-    title: "Hydraulic Solution",
-    description:
-      "We are a leading supplier of internationally recognized branded hydraulic pumps, hydraulic motors and components, to fishing boats and machinery.",
-    animation: "fadeInDown",
-  },
-  {
-    image: "https://d1efw33w1xgex9.cloudfront.net/img/solution-sction/Sealing+Solution.jpeg",
-    alt: "Sealing solution",
-    title: "Sealing Solution",
-    description:
-      "We manufacture and import all kinds of hydraulic seals, pneumatic seals, mechanical seals, and also O rings for utilization of factories and heavy machinery.",
-    animation: "fadeInUp",
-  },
-];
 
 const marineProducts = [
   {
@@ -74,47 +49,9 @@ export default function HomePage() {
       <SiteHeader />
       <HomeHeroSlider />
 
-      <section className="cta-section" id="desc-img">
-        <div className="auto-container">
-          <div className="wrapper-box light-header hidden">
-            <h4 className="fade-text" style={{ textAlign: "center", textTransform: "uppercase", fontWeight: 700 }}>
-              We manufacture different varieties of hydraulic fishing winches and haulers.
-              <br />
-              We also supply various types of hydraulic pumps, motors,
-              <br />
-              oil seals, and O rings.
-            </h4>
-          </div>
-        </div>
-      </section>
+      <HydraulicSolutionsSection />
 
-      <section className="services-section pb-0">
-        <div className="sec-bg" />
-        <div className="auto-container">
-          <div className="row" style={{ margin: "0 3vh" }}>
-            {solutions.map((solution) => (
-              <div className="col-lg-4 col-md-2 service-block hidden2" key={solution.title}>
-                <div className={`inner-box wow ${solution.animation}`} data-wow-duration="1500ms">
-                  <div className="image">
-                    <img src={solution.image} alt={solution.alt} />
-                  </div>
-                  <div className="content">
-                    <h3>
-                      <a href="/projects">{solution.title}</a>
-                    </h3>
-                    <div className="text text-prods2">{solution.description}</div>
-                    <div className="link">
-                      <a href="/projects" className="theme-btn btn-style-one">
-                        <span>Read More</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesSolutionsSection />
 
       <section className="testimonials-section second-hd">
         <div className="auto-container">
