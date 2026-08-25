@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import ContactFormEnhancer from "../../components/ContactFormEnhancer";
 import LegacyMarkupPage from "../../components/LegacyMarkupPage";
+import ProjectsCMSInjector from "../../components/ProjectsCMSInjector";
 import { legacyPageSlugs, legacyPages } from "../../lib/legacy-page-data";
 
 type LegacyPageProps = {
@@ -40,6 +41,7 @@ export default function LegacyPage({ params }: LegacyPageProps) {
     <>
       <LegacyMarkupPage fragment={page.fragment} />
       {params.slug === "contact" ? <ContactFormEnhancer /> : null}
+      {params.slug === "projects" ? <ProjectsCMSInjector /> : null}
     </>
   );
 }

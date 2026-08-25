@@ -59,7 +59,9 @@ export default function SiteHeader() {
                       <li className="nav-item dropdown" id="product-dropdown">
                         <a
                           className={`nav-link dropdown-toggle ${
-                            pathname.startsWith("/projects") || pathname.startsWith("/item-page")
+                            pathname.startsWith("/projects") ||
+                            pathname.startsWith("/item-page") ||
+                            pathname.startsWith("/product")
                               ? "nav-link-active"
                               : ""
                           }`}
