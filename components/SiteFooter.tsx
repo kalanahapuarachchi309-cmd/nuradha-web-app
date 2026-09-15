@@ -152,7 +152,7 @@ export default function SiteFooter() {
             <ul className="pro-social-icons">
               <li>
                 <a
-                  href="https://web.facebook.com/nuradhaeng/?_rdc=1&_rdr"
+                  href="https://www.facebook.com/share/17sXcMbjpx/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -161,17 +161,32 @@ export default function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Twitter">
-                  <i className="fab fa-twitter" />
+                <a
+                  href="https://www.instagram.com/nuradhaeng?stkn=bDFjYXh3Z2hsbWdu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <i className="fab fa-instagram" />
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Google Plus">
-                  <i className="fab fa-google-plus-g" />
+                <a
+                  href="https://www.tiktok.com/@nuradhaengineering?_r=1&_t=ZS-99ZxMWpZYMU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                >
+                  <i className="fab fa-tiktok" />
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="YouTube">
+                <a
+                  href="https://youtube.com/@nuradhaeng-c8q?si=cuJcOHavlxmcZOPw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
                   <i className="fab fa-youtube" />
                 </a>
               </li>
