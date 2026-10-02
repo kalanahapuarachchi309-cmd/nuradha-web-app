@@ -12,7 +12,7 @@ type LegacyPageProps = {
 
 export function generateStaticParams() {
   return legacyPageSlugs
-    .filter((slug) => slug !== "about")
+    .filter((slug) => slug !== "about" && slug !== "projects")
     .map((slug) => ({ slug }));
 }
 
