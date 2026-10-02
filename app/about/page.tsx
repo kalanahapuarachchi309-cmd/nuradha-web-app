@@ -105,7 +105,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="about-page">
-      <style>{`
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .about-page {
           min-height: 100vh;
           overflow-x: hidden;
@@ -620,8 +622,9 @@ export default function AboutPage() {
             width: 92%;
             margin-left: 4vw;
           }
-        }
-      `}</style>
+        `,
+        }}
+      />
 
       <SiteHeader />
 
