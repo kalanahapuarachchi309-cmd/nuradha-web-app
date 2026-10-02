@@ -409,24 +409,54 @@ export default function AboutPage() {
           overflow: hidden;
           border-radius: 18px;
           background: #ffffff;
-          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          display: flex;
+          flex-direction: column;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .about-product-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-product-img-box {
+          height: 250px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px;
+          background: #ffffff;
+          overflow: hidden;
         }
 
         .about-product-card img {
+          max-width: 100%;
+          max-height: 100%;
           width: 100%;
-          height: 220px;
-          object-fit: cover;
+          height: 100%;
+          object-fit: contain;
           display: block;
+          transition: transform 0.35s ease;
+        }
+
+        .about-product-card:hover img {
+          transform: scale(1.05);
         }
 
         .about-product-card h6 {
           margin: 0;
-          padding: 1rem 1rem 1.1rem;
+          padding: 0.95rem 1rem 1.15rem;
           color: #1f241d;
           font-size: 1rem;
           font-weight: 700;
           line-height: 1.4;
           text-align: center;
+          background: #ffffff;
+          border-top: 1px solid rgba(0, 0, 0, 0.05);
+          margin-top: auto;
         }
 
         .review-slide-main {
@@ -599,8 +629,9 @@ export default function AboutPage() {
             padding-left: 0;
           }
 
-          .about-product-card img {
-            height: 200px;
+          .about-product-img-box {
+            height: 220px;
+            padding: 12px;
           }
 
           .about-slide-card {
@@ -767,7 +798,9 @@ export default function AboutPage() {
                     <div className="about-product-grid hidden2">
                       {products.map((product) => (
                         <div className="about-product-card" key={product.title}>
-                          <img src={product.src} alt={product.alt} />
+                          <div className="about-product-img-box">
+                            <img src={product.src} alt={product.alt} />
+                          </div>
                           <h6>{product.title}</h6>
                         </div>
                       ))}
