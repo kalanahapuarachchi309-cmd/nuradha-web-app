@@ -9,16 +9,21 @@ const haulerLinks = [
   ["Combine Net & Pot Hauler", "/item-page5"],
   ["Pot Hauler", "/item-page2"],
   ["Hydraulic Line Hauler", "/item-page6"],
+  ["Deep Drop Fishing Reel", "/deep-drop-reel"],
+  ["Custom Long Line Spools", "/longline-spools"],
 ];
 
 const productLinks = [
   ["Spares & Accessories", "/accessories-spares"],
+  ["Heat Exchangers & Coolers", "/heat-exchangers"],
   ["Inboard Marine Steering", "/marine-steering"],
   ["Hydraulic Motors", "/hydrolic-motors"],
   ["Hydraulic Pump", "/hydrolic-pump"],
+  ["SS Hydraulic Fittings", "/stainless-steel-fittings"],
   ["Hydraulic Seals O Rings", "/seals-rings"],
   ["Spiral Gasket", "/spiral-gasket"],
   ["Sea Water Pump", "/water-pump"],
+  ["CNC Machining & Fabrication", "/cnc-engineering"],
 ];
 
 export default function SiteHeader() {
