@@ -30,6 +30,14 @@ function matchesCategory(
     return true;
   }
 
+  // Heat Exchangers & Coolers matching
+  if (
+    (name.includes("heat") || name.includes("cooler") || name.includes("exchanger")) &&
+    (h.includes("heat") || h.includes("cooler") || h.includes("exchanger"))
+  ) {
+    return true;
+  }
+
   // Inboard Marine Engines matching (distinct from spares)
   if (
     name.includes("engine") &&

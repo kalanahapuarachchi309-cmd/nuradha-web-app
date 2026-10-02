@@ -97,15 +97,35 @@ export function enhanceProjectsPage(fragment: string): string {
     }
   }
 
-  // 2. Add Seawater Heat Exchangers to Inboard Marine Engines section if not present
-  if (!html.includes("/heat-exchangers")) {
-    const engineMatch = html.match(/(RECONDITION Marine Engine[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*<\/div>)/);
-    if (engineMatch) {
-      const extraEngineCard = `
-                <div class="col-lg-4 col-md-6 project-block show2">
+  // 2. Replace Inboard Marine Engines section with dedicated Seawater Heat Exchangers & Oil Coolers section
+  const engineHeading = "INBOARD MARINE ENGINES";
+  const engineIdx = html.indexOf(engineHeading);
+  if (engineIdx !== -1) {
+    const secStart = html.lastIndexOf("<section", engineIdx);
+    const mpIdx = html.indexOf("marine-prods", engineIdx);
+    if (secStart !== -1 && mpIdx !== -1) {
+      const secEnd = html.indexOf("</section>", mpIdx);
+      if (secEnd !== -1) {
+        const fullEngineSection = html.slice(secStart, secEnd + "</section>".length);
+        const heatExchangerSection = `
+    <!-- SEAWATER HEAT EXCHANGERS & OIL COOLERS -->
+    <section style="background-color: #1b251b; padding: 4vh; margin: 0 4vw" class="mb-4">
+        <div class="auto-container sub-prod-head-1">
+            <div class="wrapper-box light-header" style="text-align: center">
+                <h2 style="font-weight: bold">SEAWATER HEAT EXCHANGERS &amp; OIL COOLERS</h2>
+            </div>
+        </div>
+    </section>
+
+    <div><br><br></div>
+
+    <section class="projects-section style-two">
+        <div class="auto-container marine-prods">
+            <div class="row" style="width: 90vw; margin-left:4vw">
+                <div class="col-lg-6 col-md-6 project-block show2">
                     <div class="inner-box">
                         <div class="image" style="background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
-                            <img src="/assets/images/new-products/cooler-1.png" alt="Seawater Heat Exchangers & Oil Coolers" style="width: 100%; height: 260px; object-fit: contain; padding: 12px; display: block;" />
+                            <img src="/assets/images/new-products/cooler-1.png" alt="Seawater Heat Exchangers &amp; Oil Coolers" style="width: 100%; height: 260px; object-fit: contain; padding: 12px; display: block;" />
                         </div>
                         <div class="text-overlay test-desc">
                             <div class="link">
@@ -115,8 +135,26 @@ export function enhanceProjectsPage(fragment: string): string {
                             </div>
                         </div>
                     </div>
-                </div>`;
-      html = html.replace(engineMatch[0], engineMatch[0] + extraEngineCard);
+                </div>
+                <div class="col-lg-6 col-md-6 project-block show2">
+                    <div class="inner-box">
+                        <div class="image" style="background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
+                            <img src="/assets/images/new-products/cooler-cores-ss.png" alt="Custom Stainless Steel &amp; Cu-Ni Cooler Cores" style="width: 100%; height: 260px; object-fit: contain; padding: 12px; display: block;" />
+                        </div>
+                        <div class="text-overlay test-desc">
+                            <div class="link">
+                                <a href="/heat-exchangers" class="theme-btn btn-style-one goToProd"><span>
+                                        <h3 style="color: whitesmoke; font-size: 1.25em; font-weight: bold; text-transform: uppercase;">Custom Cooler Cores &amp; Tube Bundles</h3>
+                                    </span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>`;
+        html = html.replace(fullEngineSection, heatExchangerSection);
+      }
     }
   }
 
@@ -172,6 +210,21 @@ export function enhanceProjectsPage(fragment: string): string {
     const wpRegex = /(<a href="\/water-pump"[\s\S]*?<\/article>)/;
     if (wpRegex.test(html)) {
       html = html.replace(wpRegex, "$1" + extraPreviewCards);
+    }
+  }
+
+  // 5. Remove WINCH, ENGINE, SPARES & ACCESSORIES placeholder section
+  const sparesHeading = "WINCH, ENGINE, SPARES & ACCESSORIES";
+  const sparesIdx = html.indexOf(sparesHeading);
+  if (sparesIdx !== -1) {
+    const secStart = html.lastIndexOf("<section", sparesIdx);
+    const lastSecIdx = html.indexOf("last-section", sparesIdx);
+    if (secStart !== -1 && lastSecIdx !== -1) {
+      const secEnd = html.indexOf("</section>", lastSecIdx);
+      if (secEnd !== -1) {
+        const fullSparesSection = html.slice(secStart, secEnd + "</section>".length);
+        html = html.replace(fullSparesSection, "");
+      }
     }
   }
 
