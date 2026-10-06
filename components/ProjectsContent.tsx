@@ -511,12 +511,20 @@ export default function ProjectsContent() {
               <section className="pro-category-group" id="marine-winches-haulers">
                 <div className="pro-category-header">
                   <div className="pro-category-badge-wrap">
-                    <span className="pro-category-badge">BLUE THUNDER SERIES • FLAGSHIP COMMERCIAL DECK MACHINERY</span>
-                    <span className="pro-category-count-badge">7 Specialized Models</span>
+                    <span className="pro-category-badge">
+                      <span className="pro-badge-dot" />
+                      BLUE THUNDER SERIES • FLAGSHIP COMMERCIAL DECK MACHINERY
+                    </span>
+                    <span className="pro-category-count-badge">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      7 Specialized Models
+                    </span>
                   </div>
 
                   <h2 className="pro-category-title">
-                    <span className="cat-order-num">1.</span> MARINE WINCHES , HAULERS &amp; REELS
+                    <span className="cat-order-num">01.</span> MARINE WINCHES, HAULERS &amp; REELS
                   </h2>
 
                   <p className="pro-category-subtitle">
@@ -530,26 +538,30 @@ export default function ProjectsContent() {
                   <div className="pro-category-action-row">
                     <div className="pro-category-highlights-bar">
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> Pelagic Longline Retrieval
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Pelagic Longline Retrieval</span>
                       </div>
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> Continuous Gillnet Hauling
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Continuous Gillnet Hauling</span>
                       </div>
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> High-Torque Hydraulic Drives
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>High-Torque Hydraulic Drives</span>
                       </div>
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> Custom Sized for Boat Decks
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Custom Sized for Boat Decks</span>
                       </div>
                     </div>
-
-                    <button
-                      type="button"
-                      className="pro-category-focus-btn"
-                      onClick={() => setActiveCategory("haulers")}
-                    >
-                      Focus Winches &amp; Haulers (7) →
-                    </button>
                   </div>
                 </div>
 
@@ -559,7 +571,10 @@ export default function ProjectsContent() {
 
                 <div className="pro-category-divider">
                   <div className="divider-line" />
-                  <span className="divider-icon">⚓</span>
+                  <div className="divider-badge">
+                    <span className="divider-icon">⚓</span>
+                    <span className="divider-text">COMMERCIAL FLEET SYSTEMS</span>
+                  </div>
                   <div className="divider-line" />
                 </div>
               </section>
@@ -568,12 +583,20 @@ export default function ProjectsContent() {
               <section className="pro-category-group" id="marine-hydraulic-equipment">
                 <div className="pro-category-header">
                   <div className="pro-category-badge-wrap">
-                    <span className="pro-category-badge">COMMERCIAL MARINE SYSTEMS &amp; PRECISION COMPONENTS</span>
-                    <span className="pro-category-count-badge">9 Standalone Product Lines</span>
+                    <span className="pro-category-badge">
+                      <span className="pro-badge-dot" />
+                      COMMERCIAL MARINE SYSTEMS &amp; PRECISION COMPONENTS
+                    </span>
+                    <span className="pro-category-count-badge">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      9 Standalone Product Lines
+                    </span>
                   </div>
 
                   <h2 className="pro-category-title">
-                    <span className="cat-order-num">2.</span> HYDRAULIC EQUIPMENT, SEALS, COOLERS &amp; FABRICATION
+                    <span className="cat-order-num">02.</span> HYDRAULIC EQUIPMENT, SEALS, COOLERS &amp; FABRICATION
                   </h2>
 
                   <p className="pro-category-subtitle">
@@ -587,16 +610,28 @@ export default function ProjectsContent() {
                   <div className="pro-category-action-row">
                     <div className="pro-category-highlights-bar">
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> Rated Up to 350 Bar Continuous
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Rated Up to 350 Bar Continuous</span>
                       </div>
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> Marine Grade 316 Stainless Steel
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Marine Grade 316 Stainless Steel</span>
                       </div>
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> Cu-Ni 90/10 Anti-Fouling Coolers
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Cu-Ni 90/10 Anti-Fouling Coolers</span>
                       </div>
                       <div className="pro-category-highlight-pill">
-                        <span className="gold-check">★</span> Precision In-House CNC Lathe Machining
+                        <svg className="pro-pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Precision In-House CNC Lathe Machining</span>
                       </div>
                     </div>
                   </div>
