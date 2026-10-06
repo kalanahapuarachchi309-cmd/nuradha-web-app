@@ -413,23 +413,6 @@ export default function ProjectsContent() {
                 </button>
               )}
             </div>
-
-            <div className="projects-category-pills">
-              {categoryFilterTabs.map((tab) => (
-                <button
-                  type="button"
-                  key={tab.key}
-                  className={`projects-category-pill ${activeCategory === tab.key && !searchQuery ? "active" : ""}`}
-                  onClick={() => {
-                    setActiveCategory(tab.key);
-                    setSearchQuery("");
-                  }}
-                >
-                  <span>{tab.label}</span>
-                  <span className="projects-pill-count">{categoryCounts[tab.key] || 0}</span>
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </section>
