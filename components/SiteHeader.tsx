@@ -2,28 +2,26 @@
 
 import { usePathname } from "next/navigation";
 
-const haulerLinks = [
-  ["Long Line Hauler", "/item-page4"],
-  ["Net Hauler", "/item-page3"],
-  ["Purse Seine Winch", "/item-page1"],
-  ["Combine Net & Pot Hauler", "/item-page5"],
-  ["Pot Hauler", "/item-page2"],
-  ["Hydraulic Line Hauler", "/item-page6"],
-  ["Deep Drop Fishing Reel", "/deep-drop-reel"],
-  ["Custom Long Line Spools", "/longline-spools"],
+const marineWinchesAndHaulers = [
+  ["Blue Thunder Hydraulic Longline Hauler", "/item-page4"],
+  ["Blue Thunder Net Hauler", "/item-page3"],
+  ["Blue Thunder Purse Seine Winch", "/item-page1"],
+  ["Blue Thunder Combined Net & Rope Hauler", "/item-page5"],
+  ["Blue Thunder Pot Hauler", "/item-page2"],
+  ["Blue Thunder Deep Drop Fishing Reel Hydraulic / Electric", "/deep-drop-reel"],
+  ["Blue Thunder Longline Spool", "/longline-spools"],
 ];
 
-const productLinks = [
-  ["Spares & Accessories", "/accessories-spares"],
-  ["Heat Exchangers & Coolers", "/heat-exchangers"],
-  ["Inboard Marine Steering", "/marine-steering"],
-  ["Hydraulic Motors", "/hydrolic-motors"],
+const directProducts = [
   ["Hydraulic Pump", "/hydrolic-pump"],
-  ["SS Hydraulic Fittings", "/stainless-steel-fittings"],
-  ["Hydraulic Seals O Rings", "/seals-rings"],
-  ["Spiral Gasket", "/spiral-gasket"],
-  ["Sea Water Pump", "/water-pump"],
-  ["CNC Machining & Fabrication", "/cnc-engineering"],
+  ["Hydraulic Motors", "/hydrolic-motors"],
+  ["Custom Made Hydraulic / Pneumatic Seals & O Rings", "/seals-rings"],
+  ["Sea Water Heat Exchangers", "/heat-exchangers"],
+  ["Stainless Steel Hydraulic Fittings", "/stainless-steel-fittings"],
+  ["Manual CNC Engineering and Fabrications", "/cnc-engineering"],
+  ["Spiral Wound Gaskets", "/spiral-gasket"],
+  ["Inboard / Outboard Marine Steering Systems", "/marine-steering"],
+  ["Marine Spares and Accessories", "/accessories-spares"],
 ];
 
 export default function SiteHeader() {
@@ -66,7 +64,17 @@ export default function SiteHeader() {
                           className={`nav-link dropdown-toggle ${
                             pathname.startsWith("/projects") ||
                             pathname.startsWith("/item-page") ||
-                            pathname.startsWith("/product")
+                            pathname.startsWith("/product") ||
+                            pathname.startsWith("/deep-drop") ||
+                            pathname.startsWith("/longline") ||
+                            pathname.startsWith("/heat-exchanger") ||
+                            pathname.startsWith("/hydrolic") ||
+                            pathname.startsWith("/seals") ||
+                            pathname.startsWith("/spiral") ||
+                            pathname.startsWith("/marine") ||
+                            pathname.startsWith("/water-pump") ||
+                            pathname.startsWith("/cnc") ||
+                            pathname.startsWith("/accessories")
                               ? "nav-link-active"
                               : ""
                           }`}
@@ -75,10 +83,20 @@ export default function SiteHeader() {
                           Products
                         </a>
                         <ul className="dropdown-menu">
+                          <li className="prod-all-item">
+                            <a className="dropdown-item prod-all-link" href="/projects">
+                              ⚓ All Products Catalog (16 Items) →
+                            </a>
+                          </li>
+                          <li className="dropdown-divider" style={{ borderColor: "rgba(234, 179, 8, 0.2)", margin: "4px 0" }} />
+
+                          {/* Only this section has sub-products! */}
                           <li className="nav-item dropdown prod-dropdown">
-                            <a className="nav-link dropdown-toggle">Haulers &amp; Winches</a>
+                            <a className="nav-link dropdown-toggle" href="/projects?cat=haulers">
+                              Marine Winches , Haulers &amp; Reels
+                            </a>
                             <ul className="dropdown-menu">
-                              {haulerLinks.map(([label, href]) => (
+                              {marineWinchesAndHaulers.map(([label, href]) => (
                                 <li key={href}>
                                   <a className="dropdown-item" href={href}>
                                     {label}
@@ -87,22 +105,9 @@ export default function SiteHeader() {
                               ))}
                             </ul>
                           </li>
-                          <li className="nav-item dropdown prod-dropdown">
-                            <a className="nav-link dropdown-toggle">Inboard Marine Engines</a>
-                            <ul className="dropdown-menu">
-                              <li>
-                                <a className="dropdown-item" href="/marineengine_new">
-                                  Brand-new Marine Engine
-                                </a>
-                              </li>
-                              <li>
-                                <a className="dropdown-item" href="/marineengine_rec">
-                                  Recondition Marine Engine
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          {productLinks.map(([label, href]) => (
+
+                          {/* Other products do NOT have sub-products: they are direct product links */}
+                          {directProducts.map(([label, href]) => (
                             <li className="prod-dropdown" key={href}>
                               <a className="dropdown-item" href={href}>
                                 {label}
