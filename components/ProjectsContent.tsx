@@ -624,15 +624,6 @@ export default function ProjectsContent() {
                 <div className="projects-grid">
                   {winchesAndHaulersProducts.map((product) => renderProductCard(product))}
                 </div>
-
-                <div className="pro-category-divider">
-                  <div className="divider-line" />
-                  <div className="divider-badge">
-                    <span className="divider-icon">⚓</span>
-                    <span className="divider-text">OUR OTHER PRODUCTS &amp; SYSTEMS</span>
-                  </div>
-                  <div className="divider-line" />
-                </div>
               </section>
 
               {/* SECTION 2: Standalone Marine & Hydraulic Products */}
