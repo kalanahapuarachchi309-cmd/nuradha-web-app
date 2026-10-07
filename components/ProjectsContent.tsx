@@ -194,6 +194,19 @@ const standaloneProducts: ProductItem[] = [
   },
 ];
 
+// Numbering mapping for standalone products (1 - 9)
+const standaloneOrderMap: Record<string, number> = {
+  "hydraulic-pump": 1,
+  "hydraulic-motors": 2,
+  "seals-and-rings": 3,
+  "heat-exchangers": 4,
+  "ss-hydraulic-fittings": 5,
+  "cnc-engineering": 6,
+  "spiral-gaskets": 7,
+  "marine-steering": 8,
+  "accessories-spares": 9,
+};
+
 const categoryFilterTabs = [
   { key: "all", label: "All Products" },
   { key: "haulers", label: "Winches, Haulers & Reels" },
@@ -291,20 +304,47 @@ export default function ProjectsContent() {
   }, [allProductsList, searchQuery]);
 
   // Render a single product card
-  const renderProductCard = (product: ProductItem) => {
+  const renderProductCard = (product: ProductItem, overrideNumber?: number) => {
+    const itemNumber = overrideNumber ?? standaloneOrderMap[product.id];
+    const formattedNum = itemNumber ? String(itemNumber).padStart(2, "0") : null;
     const whatsappText = encodeURIComponent(
       `Hello Nuradha Engineering, I would like to inquire about specifications and pricing for: ${product.title}`
     );
     const whatsappUrl = `https://wa.me/94773276080?text=${whatsappText}`;
 
     return (
-      <div className="project-card" key={product.id}>
+      <div className={`project-card ${formattedNum ? "has-card-number" : ""}`} key={product.id}>
+        {/* Netflix-inspired Giant Architectural Outline Watermark Number */}
+        {formattedNum && (
+          <div className="project-card-giant-number" aria-hidden="true">
+            {formattedNum}
+          </div>
+        )}
+
         <div className="project-card-img-wrap">
           <span className="project-card-category-tag">{product.category}</span>
+
+          {/* Prominent Technical Number Badge */}
+          {formattedNum && (
+            <div className="project-card-badge-number" title={`Product No. ${formattedNum}`}>
+              <span className="badge-num-prefix">NO.</span>
+              <span className="badge-num-digits">{formattedNum}</span>
+            </div>
+          )}
+
           <img src={product.image} alt={product.title} loading="lazy" />
         </div>
+
         <div className="project-card-body">
-          <h3 className="project-card-title">{product.title}</h3>
+          <div className="project-card-header-meta">
+            {formattedNum && (
+              <div className="project-card-index-pill">
+                <span className="index-pill-dot" />
+                <span>CATALOG ITEM #{formattedNum}</span>
+              </div>
+            )}
+            <h3 className="project-card-title">{product.title}</h3>
+          </div>
           <p className="project-card-desc">{product.description}</p>
 
           {product.features && product.features.length > 0 && (
@@ -655,7 +695,7 @@ export default function ProjectsContent() {
                 </div>
 
                 <div className="projects-grid">
-                  {standaloneProducts.map((product) => renderProductCard(product))}
+                  {standaloneProducts.map((product, idx) => renderProductCard(product, idx + 1))}
                 </div>
               </section>
 
