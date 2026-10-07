@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
+import ScopeMark from "./ScopeMark";
 import { fetchCMSProducts, formatImageUrl, CMSProduct } from "../lib/api";
 
 export type ProductItem = {
@@ -492,7 +493,10 @@ export default function ProjectsContent() {
                         {filteredList.length} Products Available
                       </span>
                     </div>
-                    <h2 className="pro-category-title">{currentTab?.label}</h2>
+                    <h2 className="pro-category-title">
+                      <ScopeMark label={currentTab?.label || "Category"} />
+                      <span>{currentTab?.label}</span>
+                    </h2>
                     <p className="pro-category-subtitle">
                       Precision-engineered equipment built to rigorous commercial marine standards.
                     </p>
@@ -524,7 +528,8 @@ export default function ProjectsContent() {
                   </div>
 
                   <h2 className="pro-category-title">
-                    <span className="cat-order-num">01.</span> MARINE WINCHES, HAULERS &amp; REELS
+                    <ScopeMark label="Marine Winches, Haulers and Reels" />
+                    <span>MARINE WINCHES, HAULERS &amp; REELS</span>
                   </h2>
 
                   <p className="pro-category-subtitle">
@@ -562,6 +567,17 @@ export default function ProjectsContent() {
                         <span>Custom Sized for Boat Decks</span>
                       </div>
                     </div>
+
+                    <a
+                      href="#marine-hydraulic-equipment"
+                      className="pro-category-jump-btn"
+                      title="Scroll down to view Our Other Products"
+                    >
+                      <span>Explore Our Other Products</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
 
@@ -573,7 +589,7 @@ export default function ProjectsContent() {
                   <div className="divider-line" />
                   <div className="divider-badge">
                     <span className="divider-icon">⚓</span>
-                    <span className="divider-text">COMMERCIAL FLEET SYSTEMS</span>
+                    <span className="divider-text">OUR OTHER PRODUCTS &amp; SYSTEMS</span>
                   </div>
                   <div className="divider-line" />
                 </div>
@@ -585,7 +601,7 @@ export default function ProjectsContent() {
                   <div className="pro-category-badge-wrap">
                     <span className="pro-category-badge">
                       <span className="pro-badge-dot" />
-                      COMMERCIAL MARINE SYSTEMS &amp; PRECISION COMPONENTS
+                      OUR OTHER PRODUCTS • COMMERCIAL SYSTEMS &amp; PRECISION COMPONENTS
                     </span>
                     <span className="pro-category-count-badge">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -596,15 +612,16 @@ export default function ProjectsContent() {
                   </div>
 
                   <h2 className="pro-category-title">
-                    <span className="cat-order-num">02.</span> HYDRAULIC EQUIPMENT, SEALS, COOLERS &amp; FABRICATION
+                    <ScopeMark label="Our Other Products - Commercial Marine & Hydraulic Systems" />
+                    <span>OUR OTHER PRODUCTS</span>
                   </h2>
 
                   <p className="pro-category-subtitle">
-                    High-Pressure Hydraulic Pumps &amp; Motors, Custom Seals, Heat Exchangers, 316 SS Fittings, CNC Machining &amp; Steering
+                    Commercial Hydraulic Pumps &amp; Motors, Seals, Heat Exchangers, 316 SS Fittings, CNC Machining &amp; Steering
                   </p>
 
                   <p className="pro-category-desc">
-                    Comprehensive inventory of commercial marine equipment and precision components manufactured and imported to international maritime standards, ensuring zero-leakage performance, corrosion resistance, and maximum operational life.
+                    Beyond our flagship Blue Thunder fishing winches and haulers, Nuradha Engineering manufactures, fabricates, and supplies an extensive inventory of high-pressure marine hydraulics, custom seals, Cu-Ni heat exchangers, and precision CNC components engineered to international maritime standards.
                   </p>
 
                   <div className="pro-category-action-row">
@@ -657,7 +674,8 @@ export default function ProjectsContent() {
                       <span className="pro-category-count-badge">{cmsProducts.length} Items</span>
                     </div>
                     <h2 className="pro-category-title">
-                      <span className="cat-order-num">3.</span> ADDITIONAL MARINE PRODUCTS
+                      <ScopeMark label="Additional Marine Products" />
+                      <span>ADDITIONAL MARINE PRODUCTS</span>
                     </h2>
                   </div>
 

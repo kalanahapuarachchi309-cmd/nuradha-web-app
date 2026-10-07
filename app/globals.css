@@ -3269,19 +3269,244 @@ img {
   margin: 0 0 10px 0;
   line-height: 1.25;
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .pro-category-title .cat-order-num {
-  color: #eab308;
-  background: linear-gradient(135deg, #fef08a 0%, #eab308 60%, #ca8a04 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: none;
+}
+
+/* ==========================================================================
+   Interactive Precision Scope Mark (Category Target Reticle)
+   ========================================================================== */
+.pro-scope-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(36px, 2.7vw, 44px);
+  height: clamp(36px, 2.7vw, 44px);
+  padding: 0;
+  border-radius: 10px;
+  background: radial-gradient(circle at center, rgba(234, 179, 8, 0.12) 0%, rgba(15, 23, 42, 0.85) 85%);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  box-shadow: 0 0 14px rgba(234, 179, 8, 0.15), inset 0 0 8px rgba(234, 179, 8, 0.08);
+  cursor: crosshair;
+  flex-shrink: 0;
+  outline: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  vertical-align: middle;
+  user-select: none;
+}
+
+/* Ambient subtle background glow */
+.pro-scope-ambient-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.25) 0%, transparent 70%);
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+/* Radar Ping Ripple Wave */
+.pro-scope-ping-wave {
+  position: absolute;
+  inset: -6px;
+  border-radius: 14px;
+  border: 2px solid #38bdf8;
+  opacity: 0;
+  pointer-events: none;
+  animation: scopePingPulse 0.9s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes scopePingPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.95;
+    border-color: #eab308;
+  }
+  50% {
+    border-color: #38bdf8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Scope SVG styling */
+.pro-scope-svg {
+  width: 82%;
+  height: 82%;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+.pro-scope-svg .scope-lens {
+  fill: rgba(15, 23, 42, 0.55);
+  stroke: rgba(234, 179, 8, 0.2);
+  stroke-width: 0.8;
+}
+
+/* 4 Corner Framing Brackets */
+.pro-scope-svg .scope-bracket {
+  stroke: #eab308;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: 22px 22px;
+}
+
+/* Reticle Rotator Group */
+.pro-scope-svg .scope-rotator {
+  transform-origin: 22px 22px;
+  transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pro-scope-svg .scope-outer-ring {
+  stroke: rgba(234, 179, 8, 0.85);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 2.5;
+  transition: stroke 0.35s ease;
+}
+
+.pro-scope-svg .scope-inner-ring {
+  stroke: rgba(56, 189, 248, 0.7);
+  stroke-width: 1;
+  transition: stroke 0.35s ease;
+}
+
+.pro-scope-svg .scope-axis {
+  stroke: #eab308;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke 0.35s ease, stroke-width 0.35s ease;
+}
+
+.pro-scope-svg .scope-milli-tick {
+  stroke: rgba(56, 189, 248, 0.8);
+  stroke-width: 1;
+  stroke-linecap: round;
+  transition: stroke 0.35s ease;
+}
+
+.pro-scope-svg .scope-pip {
+  fill: #eab308;
+  filter: drop-shadow(0 0 5px rgba(234, 179, 8, 0.9));
+  transition: fill 0.35s ease, filter 0.35s ease;
+}
+
+.pro-scope-svg .scope-pip-core {
+  fill: #ffffff;
+}
+
+/* Status Chip */
+.pro-scope-status-chip {
+  position: absolute;
+  bottom: -9px;
+  right: -8px;
+  background: #38bdf8;
+  color: #0b1329;
+  font-size: 8px;
   font-weight: 900;
-  display: inline-block;
-  margin-right: 4px;
+  letter-spacing: 0.8px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+  animation: scopeLockPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes scopeLockPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   User Interaction: Hover & Focus States
+   ========================================================================== */
+.pro-scope-badge:hover,
+.pro-scope-badge:focus-visible,
+.pro-category-title:hover .pro-scope-badge {
+  transform: scale(1.08);
+  border-color: #fef08a;
+  background: radial-gradient(circle at center, rgba(234, 179, 8, 0.22) 0%, rgba(15, 23, 42, 0.95) 85%);
+  box-shadow: 0 0 24px rgba(234, 179, 8, 0.45), inset 0 0 12px rgba(234, 179, 8, 0.2);
+}
+
+.pro-scope-badge:hover .pro-scope-ambient-glow,
+.pro-category-title:hover .pro-scope-ambient-glow {
+  opacity: 0.85;
+}
+
+.pro-scope-badge:hover .scope-rotator,
+.pro-category-title:hover .scope-rotator {
+  transform: rotate(90deg);
+}
+
+.pro-scope-badge:hover .scope-bracket,
+.pro-category-title:hover .scope-bracket {
+  stroke: #38bdf8;
+  transform: scale(0.92);
+  filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.8));
+}
+
+.pro-scope-badge:hover .scope-pip,
+.pro-category-title:hover .scope-pip {
+  fill: #fef08a;
+  filter: drop-shadow(0 0 8px rgba(254, 240, 138, 1));
+}
+
+.pro-scope-badge:active {
+  transform: scale(0.94);
+}
+
+/* ==========================================================================
+   User Interaction: Locked Target State (OnClick)
+   ========================================================================== */
+.pro-scope-badge.is-locked {
+  border-color: #38bdf8;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.2) 0%, rgba(11, 19, 41, 0.95) 85%);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.5), inset 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+.pro-scope-badge.is-locked .pro-scope-ambient-glow {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
+  opacity: 0.9;
+}
+
+.pro-scope-badge.is-locked .scope-bracket {
+  stroke: #38bdf8;
+  transform: scale(0.9);
+  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.9));
+}
+
+.pro-scope-badge.is-locked .scope-outer-ring {
+  stroke: #38bdf8;
+}
+
+.pro-scope-badge.is-locked .scope-axis {
+  stroke: #38bdf8;
+  stroke-width: 1.8;
+}
+
+.pro-scope-badge.is-locked .scope-pip {
+  fill: #38bdf8;
+  filter: drop-shadow(0 0 9px rgba(56, 189, 248, 1));
+}
+
+.pro-scope-badge.is-locked .scope-rotator {
+  animation: scopeContinuousScan 8s linear infinite;
+}
+
+@keyframes scopeContinuousScan {
+  0% { transform: rotate(90deg); }
+  100% { transform: rotate(450deg); }
 }
 
 .pro-category-subtitle {
@@ -3346,6 +3571,32 @@ img {
 .pro-pill-icon {
   flex-shrink: 0;
   color: #eab308;
+}
+
+/* Quick Jump Button to Other Products */
+.pro-category-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  color: #facc15;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.pro-category-jump-btn:hover {
+  background: #eab308;
+  color: #0c1b2c;
+  border-color: #eab308;
+  box-shadow: 0 4px 16px rgba(234, 179, 8, 0.35);
+  transform: translateY(-2px);
 }
 
 /* Nautical Section Divider */
