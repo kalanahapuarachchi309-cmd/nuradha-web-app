@@ -194,6 +194,17 @@ const standaloneProducts: ProductItem[] = [
   },
 ];
 
+// Numbering mapping for Blue Thunder winches & haulers (1 - 7)
+const winchesOrderMap: Record<string, number> = {
+  "blue-thunder-longline-hauler": 1,
+  "blue-thunder-net-hauler": 2,
+  "blue-thunder-purse-seine-winch": 3,
+  "blue-thunder-combined-net-rope": 4,
+  "blue-thunder-pot-hauler": 5,
+  "blue-thunder-deep-drop-reel": 6,
+  "blue-thunder-longline-spool": 7,
+};
+
 // Numbering mapping for standalone products (1 - 9)
 const standaloneOrderMap: Record<string, number> = {
   "hydraulic-pump": 1,
@@ -305,7 +316,7 @@ export default function ProjectsContent() {
 
   // Render a single product card
   const renderProductCard = (product: ProductItem, overrideNumber?: number) => {
-    const itemNumber = overrideNumber ?? standaloneOrderMap[product.id];
+    const itemNumber = overrideNumber ?? winchesOrderMap[product.id] ?? standaloneOrderMap[product.id];
     const formattedNum = itemNumber ? String(itemNumber).padStart(2, "0") : null;
     const whatsappText = encodeURIComponent(
       `Hello Nuradha Engineering, I would like to inquire about specifications and pricing for: ${product.title}`
@@ -622,7 +633,7 @@ export default function ProjectsContent() {
                 </div>
 
                 <div className="projects-grid">
-                  {winchesAndHaulersProducts.map((product) => renderProductCard(product))}
+                  {winchesAndHaulersProducts.map((product, idx) => renderProductCard(product, idx + 1))}
                 </div>
               </section>
 
